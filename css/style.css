@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    color: #f8f4f4;
+    background:
+        radial-gradient(circle at top, rgba(91, 29, 54, 0.28), transparent 38%),
+        #090709;
+    font-family: 'Poppins', sans-serif;
+}
+
+.page {
+    width: min(100%, 1100px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: clamp(18px, 4vh, 42px) 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.greetings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1px, 0.5vw, 7px);
+    margin-bottom: 18px;
+    font-size: clamp(2.5rem, 7vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+}
+
+.greetings > span {
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: #fff;
+        text-shadow: 0 0 12px #d98ca8, 0 0 35px rgba(217, 140, 168, .55);
+    }
+    10%, 90% {
+        color: #171217;
+        text-shadow: none;
+    }
+}
+
+.greetings > span:nth-child(2) { animation-delay: .2s; }
+.greetings > span:nth-child(3) { animation-delay: .4s; }
+.greetings > span:nth-child(4) { animation-delay: .6s; }
+.greetings > span:nth-child(5) { animation-delay: .8s; }
+.greetings > span:nth-child(6) { animation-delay: 1s; }
+.greetings > span:nth-child(7) { animation-delay: 1.2s; }
+.greetings > span:nth-child(8) { animation-delay: 1.4s; }
+
+.letter {
+    position: relative;
+    width: min(100%, 900px);
+    max-height: min(62vh, 620px);
+    overflow-y: auto;
+    padding: clamp(24px, 4vw, 42px) clamp(22px, 5vw, 58px);
+    border: 1px solid rgba(255, 210, 225, .2);
+    border-radius: 18px;
+    background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025));
+    box-shadow: 0 18px 60px rgba(0,0,0,.45), inset 0 0 30px rgba(255,255,255,.025);
+    backdrop-filter: blur(5px);
+}
+
+.letter::before {
+    content: '♡';
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    color: rgba(255, 185, 208, .5);
+    font-size: 1.3rem;
+}
+
+.letter-content {
+    max-width: 780px;
+    margin: 0 auto;
+    font-size: clamp(.86rem, 1.35vw, 1.05rem);
+    line-height: 1.65;
+    text-align: justify;
+}
+
+.letter-content p {
+    margin-bottom: 12px;
+}
+
+.opening {
+    margin-bottom: 18px !important;
+    color: #ffd9e5;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.25rem, 2.3vw, 1.65rem);
+    font-style: italic;
+    text-align: center;
+}
+
+.final-line {
+    margin-top: 18px;
+    margin-bottom: 4px !important;
+    text-align: center;
+}
+
+.signature {
+    margin-bottom: 0 !important;
+    color: #ffd9e5;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    font-weight: 600;
+    text-align: center;
+}
+
+.button {
+    margin-top: 18px;
+}
+
+.button a {
+    display: inline-block;
+    padding: 9px 20px;
+    border-radius: 999px;
+    color: #fff;
+    background: #8e3158;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 500;
+    box-shadow: 0 6px 20px rgba(142, 49, 88, .3);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.button a:hover {
+    background: #aa3f6b;
+    transform: translateY(-2px);
+}
+
+.letter::-webkit-scrollbar {
+    width: 5px;
+}
+
+.letter::-webkit-scrollbar-thumb {
+    background: rgba(255, 190, 210, .35);
+    border-radius: 10px;
+}
+
+@media (max-width: 574px) {
+    .page {
+        min-height: 100svh;
+        padding: 14px 10px 18px;
+    }
+
+    .greetings {
+        margin-bottom: 12px;
+        font-size: clamp(2rem, 11vw, 3.2rem);
+    }
+
+    .letter {
+        width: 100%;
+        max-height: 70svh;
+        padding: 20px 17px;
+        border-radius: 15px;
+    }
+
+    .letter-content {
+        font-size: .78rem;
+        line-height: 1.48;
+        text-align: left;
+    }
+
+    .letter-content p {
+        margin-bottom: 9px;
+    }
+
+    .opening {
+        margin-bottom: 13px !important;
+        font-size: 1.15rem;
+        text-align: center;
+    }
+
+    .final-line {
+        margin-top: 13px;
+        text-align: center;
+    }
+
+    .signature {
+        font-size: 1.15rem;
+    }
+
+    .button {
+        margin-top: 12px;
+    }
+
+    .button a {
+        padding: 8px 17px;
+        font-size: .78rem;
+    }
+}
+
+@media (max-height: 700px) and (min-width: 575px) {
+    .page {
+        padding-top: 12px;
+        padding-bottom: 15px;
+    }
+
+    .greetings {
+        font-size: 3.7rem;
+        margin-bottom: 10px;
+    }
+
+    .letter {
+        max-height: 65vh;
+        padding: 20px 35px;
+    }
+
+    .letter-content {
+        font-size: .85rem;
+        line-height: 1.45;
+    }
+
+    .button {
+        margin-top: 10px;
+    }
+}
